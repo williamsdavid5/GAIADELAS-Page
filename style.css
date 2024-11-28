@@ -1,0 +1,84 @@
+html,
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+@font-face {
+    src: url(fonts/Graphik-Bold.ttf) format('truetype');
+    src: url(fonts/Graphik-Regular.ttf) format('truetype');
+
+    font-family: 'Graphik-Bold';
+    font-family: 'Graphik-Regular';
+}
+
+body {
+    font-family: 'Graphik-Regular', Arial, sans-serif;
+
+    background-image: url(img/background\ completo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#inicio {}
+
+#impacto {
+    background-color: rgba(211, 81, 81, 0.5);
+}
+
+.divisao {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: auto;
+}
+
+#efeitoMenu {
+    background-color: rgb(37, 37, 219);
+    width: 40px;
+    height: 7px;
+    border-radius: 15px;
+    margin-top: 4px;
+    position: fixed;
+    top: 60px;
+    left: 100px;
+    transition: left 0.3s, opacity 0.3s;
+    opacity: 1;
+}
+
+.menu-superior {
+    padding: 40px;
+    padding-left: 100px;
+    position: fixed;
+
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-superior ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-superior li {
+    margin-right: 80px;
+    list-style: none;
+}
+
+.menu-superior a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu-superior a:hover {
+    color: #707070;
+}
