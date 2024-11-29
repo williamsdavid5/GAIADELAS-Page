@@ -133,18 +133,48 @@ h1 {
     padding: 0px;
 }
 
-#objetivo #direita {
-    width: 500px;
+#objetivo #direita #imagens {
+    width: calc(500px * 3);
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
 }
+
+.divImagem {
+    width: 500px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+
+#objetivo #radio {
+    display: flex;
+    justify-content: center;
+}
+
+#radio input[type="radio"] {
+    display: inline-block;
+    /* Garante que sejam visíveis */
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+
 
 #objetivo #direita img {
     width: 500px;
+    height: auto;
 }
+
+#objetivo #direita {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
 
 #objetivo #direita h1 {
     margin: 0px;
@@ -153,4 +183,17 @@ h1 {
 
 #objetivo #direita p {
     margin: 0px;
+}
+
+/*ações do radio buttom*/
+#radio #slide1:checked~#imagens {
+    transform: translateX(0px);
+}
+
+#radio #slide2:checked~#imagens {
+    transform: translateX(-500px);
+}
+
+#radio #slide3:checked~#imagens {
+    transform: translateX(-1000px);
 }

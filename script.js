@@ -28,3 +28,10 @@ window.addEventListener("scroll", function () {
     }
 
 });
+
+/*testa os radio buttoms*/
+document.querySelectorAll('input[name="slider"]').forEach(input => {
+    input.addEventListener('change', () => {
+        console.log(`Radio button ${input.id} clicado!`);
+    });
+});
