@@ -28,10 +28,20 @@ window.addEventListener("scroll", function () {
     }
 
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll("#slider .slide");
+    const radios = document.querySelectorAll("#radioButtons input[type='radio']");
 
-/*testa os radio buttoms*/
-document.querySelectorAll('input[name="slider"]').forEach(input => {
-    input.addEventListener('change', () => {
-        console.log(`Radio button ${input.id} clicado!`);
-    });
+    // Função para exibir o slide correspondente
+    const updateSlides = () => {
+        slides.forEach((slide, index) => {
+            slide.style.display = radios[index].checked ? "flex" : "none";
+        });
+    };
+
+    // Atualiza os slides ao mudar o estado dos botões de rádio
+    radios.forEach(radio => radio.addEventListener("change", updateSlides));
+
+    // Mostra o primeiro slide ao carregar
+    updateSlides();
 });
