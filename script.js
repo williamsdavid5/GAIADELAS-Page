@@ -2,6 +2,16 @@ window.addEventListener("scroll", function () {
 
     const scrollPos = window.scrollY;
     const elemento = document.getElementById("efeitoMenu");
+    const links = document.querySelectorAll(".menu-superior ul li a");
+
+    if (scrollPos > 2600) {
+        elemento.style.opacity = 0;
+        links.forEach(link => link.style.opacity = 0);
+    } else {
+        elemento.style.opacity = 1;
+        links.forEach(link => link.style.opacity = 1);
+    }
+
 
     if (scrollPos > 2000) {
         elemento.style.left = "520px";
@@ -12,14 +22,6 @@ window.addEventListener("scroll", function () {
     } else {
         elemento.style.left = "100px";
     }
-
-    if (scrollPos > 2600) {
-        elemento.style.opacity = 0;
-    } else {
-        elemento.style.opacity = 1;
-    }
-
-    const links = document.querySelectorAll(".menu-superior ul li a");
 
     if (scrollPos > 1200) {
         links.forEach(link => link.style.color = "rgb(0, 0, 0)");

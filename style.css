@@ -317,3 +317,55 @@ li {
 #impacto #direita #texto {
     padding: 0px 60px;
 }
+
+/*seção fim*/
+#fim #texto1 {
+    display: flex;
+    justify-content: center;
+    width: 1050px;
+    height: 200px;
+    position: absolute;
+    right: 4%;
+    margin-top: 20px;
+}
+
+#fim h1 {
+    color: black;
+    font-size: 60px;
+}
+
+#fim p {
+    color: black;
+    text-align: justify;
+    font-size: 25px;
+    padding: 0px 20px;
+}
+
+#fim #texto2 {
+    position: absolute;
+    right: 4%;
+    margin-top: 140px;
+    width: 1050px;
+    height: 200px;
+}
+
+#fim #texto3 {
+    position: absolute;
+    right: 4%;
+    margin-top: 300px;
+    width: 850px;
+    height: 200px;
+}
+
+#fim #texto3 p {
+    text-align: center;
+    font-size: 27px;
+}
+
+#fim #logo {
+    position: absolute;
+    right: 15%;
+    margin-top: 430px;
+    width: 540px;
+    height: auto;
+}
