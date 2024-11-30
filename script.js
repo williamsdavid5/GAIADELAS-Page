@@ -28,20 +28,47 @@ window.addEventListener("scroll", function () {
     }
 
 });
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll("#slider .slide");
-    const radios = document.querySelectorAll("#radioButtons input[type='radio']");
 
-    // Função para exibir o slide correspondente
-    const updateSlides = () => {
-        slides.forEach((slide, index) => {
-            slide.style.display = radios[index].checked ? "flex" : "none";
-        });
-    };
-
-    // Atualiza os slides ao mudar o estado dos botões de rádio
-    radios.forEach(radio => radio.addEventListener("change", updateSlides));
-
-    // Mostra o primeiro slide ao carregar
-    updateSlides();
+// Inicializa o slide visível com base no rádio marcado
+document.addEventListener('DOMContentLoaded', () => {
+    const checkedRadio = document.querySelector('#radioButtons input:checked');
+    if (checkedRadio) {
+        const index = Array.from(document.querySelectorAll('#radioButtons input')).indexOf(checkedRadio);
+        const initialSlide = document.querySelector(`#slide${index + 1}`);
+        if (initialSlide) {
+            initialSlide.classList.add('active');
+        }
+    }
 });
+
+// Configura o evento de troca para exibir o slide correspondente
+document.querySelectorAll('#radioButtons input').forEach((radio, index) => {
+    radio.addEventListener('change', () => {
+        // Oculta todos os slides
+        document.querySelectorAll('.slide').forEach(slide => {
+            slide.classList.remove('active');
+        });
+
+        // Exibe o slide correspondente ao índice do rádio selecionado
+        const selectedSlide = document.querySelector(`#slide${index + 1}`);
+        if (selectedSlide) {
+            selectedSlide.classList.add('active');
+        }
+    });
+});
+
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const radios = document.querySelectorAll('#radioButtons input');
+
+function changeSlideAutomatically() {
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    radios.forEach(radio => radio.checked = false);
+
+    radios[currentIndex].checked = true;
+
+    radios[currentIndex].dispatchEvent(new Event('change'));
+}
+
+setInterval(changeSlideAutomatically, 3000);

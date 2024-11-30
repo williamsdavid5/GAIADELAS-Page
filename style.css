@@ -145,7 +145,7 @@ h1 {
 #objetivo #slider {
     display: flex;
     width: 500px;
-    height: auto;
+    height: 424px;
     overflow: hidden;
 }
 
@@ -154,35 +154,71 @@ h1 {
     height: auto;
 }
 
-#objetivo .slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#objetivo .slide h1,
-p {
-    margin: 0;
+.slide h1 {
     padding: 0;
+    margin: 0px;
+    margin-top: 4px;
 }
 
-#slider {
-    display: flex;
-    width: 500px;
-    height: auto;
-    position: relative;
-    overflow: hidden;
+.slide p {
+    padding: 0;
+    margin: 0px;
+    margin-top: 4px;
 }
 
 .slide {
     display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: auto;
 }
 
-input[type="radio"]:checked+.slide {
+.slide.active {
     display: flex;
-    /* Exibe apenas o slide correspondente ao botão de rádio selecionado */
+    flex-direction: column;
+    align-items: center;
+}
+
+.radio-button {
+    display: none;
+}
+
+#radioButtons label {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+
+.radio-button:checked+label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(37, 37, 219);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#radioButtons label:hover {
+    background-color: #999;
+}
+
+#radioButtons label {
+    font-size: 0;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.radio-button:checked+label::after {
+    width: 17px;
+    height: 17px;
 }
