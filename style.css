@@ -8,6 +8,10 @@ li {
     height: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     src: url(fonts/Graphik-Bold.ttf) format('truetype');
     src: url(fonts/Graphik-Regular.ttf) format('truetype');
