@@ -272,3 +272,48 @@ h1 {
 #filosofia #textoQuadros {
     display: flex;
 }
+
+/*seção impacto*/
+#impacto {
+    color: black;
+}
+
+#impacto #esquerda {
+    width: 40%;
+}
+
+#impacto #esquerda img {
+    height: 540px;
+    width: auto;
+    margin-top: 40px;
+}
+
+#impacto #direita {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#impacto #direita li {
+    width: auto;
+    height: auto;
+}
+
+#impacto #direita h1 {
+    font-size: 60px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+#impacto #direita p,
+li {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+#impacto #direita #texto {
+    padding: 0px 60px;
+}
