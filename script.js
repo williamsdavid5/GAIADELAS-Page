@@ -21,7 +21,7 @@ window.addEventListener("scroll", function () {
 
     const links = document.querySelectorAll(".menu-superior ul li a");
 
-    if (scrollPos > 1500) {
+    if (scrollPos > 1200) {
         links.forEach(link => link.style.color = "rgb(0, 0, 0)");
     } else {
         links.forEach(link => link.style.color = "rgb(255, 255, 255)");
@@ -70,5 +70,5 @@ function changeSlideAutomatically() {
 
     radios[currentIndex].dispatchEvent(new Event('change'));
 }
-
+ç
 setInterval(changeSlideAutomatically, 3000);
